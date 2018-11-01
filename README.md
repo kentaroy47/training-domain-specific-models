@@ -1,7 +1,8 @@
 # training-domain-specific-models
-Training domain specific object detection models.
+This is a framework to train domain specific object detection models.
 
 Faster-RCNN implementation is based on faster-rcnn.pytorch by jwyang. Thanks!
+I strongly recommend to take a look at their readme if you get stuck on frcnn codes.
 
 https://github.com/jwyang/faster-rcnn.pytorch
 
