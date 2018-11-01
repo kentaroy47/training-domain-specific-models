@@ -6,8 +6,27 @@ Faster-RCNN implementation is based on faster-rcnn.pytorch by jwyang. Thanks!
 https://github.com/jwyang/faster-rcnn.pytorch
 
 # What is a domain specific model?
+Resnet101 is a very good model but TOO BIG!
+
+A domain specific model(DSM) is a model focusing on achieving high accuracy
+at a limited domain (e.g. fixed view of an intersection). We argue that DSMs
+can capture essential features well even with a small model size.
+
+In this repo, we train a small domain specific model (say res18) in with a dataset of a limited domain.
+
+We see that by training, small models can achieve very high accuracy!
+
+![dsm](https://github.com/kentaroy47/training-domain-specific-models/blob/master/images/fig1_v2.jpg)
+
 
 # Preparation
+
+## Requirements.
+Pytorch 0.4
+
+Python 3.x
+
+CUDA 8.0 or higher
 
 ## Clone repo
 Lets start off by cloning this repo.
@@ -64,3 +83,9 @@ python make_dataset.py
 We prepared a dataset.tar in the link bellow, if you want to take a short cut.
 
 Download (TBD) and place it in data dir.
+
+# Training Domain Specific Models!
+
+# Evaluation!
+
+
