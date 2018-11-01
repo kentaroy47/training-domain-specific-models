@@ -5,9 +5,11 @@ Faster-RCNN implementation is based on faster-rcnn.pytorch by jwyang. Thanks!
 
 https://github.com/jwyang/faster-rcnn.pytorch
 
+# What is a domain specific model?
+
 # Preparation
 
-## clone repo
+## Clone repo
 Lets start off by cloning this repo.
 
 ```
@@ -28,9 +30,9 @@ wget TBD
 cd ..
 ```
 
-## download dataset
-we prepared two survillance videos.
-we will try to train a domain specific model based on such domain.
+## Download dataset
+We release two survillance videos you can test on. (coral.mp4 is from noscope)
+A domain specific model is trained on such domain.
 
 ```
 mkdir images
@@ -43,7 +45,7 @@ wget TBD
 
 ```
 
-## setup dataset
+## Setup dataset
 If the models and the video are set, we can prepare the dataset.
 
 1. The video is converted to JPEG.
@@ -59,4 +61,6 @@ python make_dataset.py
 ```
 
 ### shortcut..
-We prepared a res101 teacher labels in the link bellow if you want to take a short cut.
+We prepared a dataset.tar in the link bellow, if you want to take a short cut.
+
+Download (TBD) and place it in data dir.
