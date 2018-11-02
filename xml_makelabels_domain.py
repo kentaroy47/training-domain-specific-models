@@ -138,7 +138,7 @@ counter = np.zeros(len(classes))
 trainclass = classes
 train_num=len(results[0])
 
-for i,file in enumerate(trainvals[:train_num]):
+for i,file in enumerate(trainvals[1:train_num]):
     
     del doc['annotation']['object'] 
     doc['annotation']['object'] = copy.deepcopy(template)
