@@ -5,6 +5,7 @@ Faster-RCNN implementation is based on faster-rcnn.pytorch by jwyang. Thanks!
 
 I strongly recommend to take a look at their readme if you get stuck on frcnn codes.
 
+
 https://github.com/jwyang/faster-rcnn.pytorch
 
 # What is a domain specific model?
@@ -37,6 +38,12 @@ Lets start off by cloning this repo.
 git clone https://github.com/kentaroy47/training-domain-specific-models.git
 cd training-domain-specific-models
 ```
+
+You may need to compile the rpn scripts.
+
+Please see jwyang's repo for details.
+
+https://github.com/jwyang/faster-rcnn.pytorch
 
 ## Download models
 We need to prepare Resnet101 and Resnet18 Faster-RCNN model.
