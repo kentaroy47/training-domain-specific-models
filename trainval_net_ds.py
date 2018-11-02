@@ -356,7 +356,7 @@ if __name__ == '__main__':
   elif args.net == 'res34':
     fasterRCNN = resnet(imdb.classes, 34, pretrained=True, class_agnostic=args.class_agnostic)
   elif args.net == 'res18':
-    fasterRCNN = resnet(imdb.classes, 18, pretrained=True, class_agnostic=args.class_agnostic)
+    fasterRCNN = resnet(imdb.classes, 18, pretrained=False, class_agnostic=args.class_agnostic)
   elif args.net == 'res10':
     fasterRCNN = resnet(imdb.classes, 10, pretrained=True, class_agnostic=args.class_agnostic)
   elif args.net == 'res152':
@@ -414,7 +414,7 @@ if __name__ == '__main__':
         
 #        load_name="models/res101/pascal_voc/faster_rcnn_1_1_3739.pth"
         checkpoint = torch.load(load_name)
-        model_coco = resnet(range(81), 18, pretrained=True, class_agnostic=args.class_agnostic)    
+        model_coco = resnet(range(81), 18, pretrained=False, class_agnostic=args.class_agnostic)    
         model_coco.create_architecture()
         model_coco.load_state_dict(checkpoint['model'])
         pretrained_dict = model_coco.state_dict()
