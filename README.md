@@ -18,7 +18,7 @@ In this repo, we train a small domain specific model (say res18) in with a datas
 
 We see that by training, small models can achieve very high accuracy!
 
-![dsm](https://github.com/kentaroy47/training-domain-specific-models/blob/master/images/fig1_v2.jpg)
+![dsm](https://github.com/kentaroy47/training-domain-specific-models/blob/master/fig1_v2.jpg)
 
 
 # Preparation
