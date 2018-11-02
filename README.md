@@ -23,7 +23,7 @@ We see that by training, small models can achieve very high accuracy!
 # Preparation
 
 ## Requirements.
-Pytorch 0.4
+Pytorch 0.4.0
 
 Python 3.x
 
@@ -34,6 +34,7 @@ Lets start off by cloning this repo.
 
 ```
 git clone https://github.com/kentaroy47/training-domain-specific-models.git
+cd training-domain-specific-models
 ```
 
 ## Download models
@@ -77,7 +78,10 @@ This is done in a single script.
 Just run:
 
 ```
-python make_dataset.py
+# for dataset coral
+python make_dataset.py　--dataset coral
+# for dataset jackson2
+python make_dataset.py　--dataset jackson2
 ```
 
 ### shortcut..
@@ -86,6 +90,13 @@ We prepared a dataset.tar in the link bellow, if you want to take a short cut.
 Download (TBD) and place it in data dir.
 
 # Training Domain Specific Models!
+Run..
+
+```
+
+python trainval_net_ds.py --cuda --net res18 --r True --dataset pascal_voc_jackson2 --lr 1e-4
+
+```
 
 # Evaluation!
 
