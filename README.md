@@ -94,7 +94,7 @@ Run..
 
 ```
 
-python trainval_net_ds.py --cuda --net res18 --epoch 30 --checksession 500 --checkepoch 40 --checkpoint 625 --r True --dataset pascal_voc_jackson2 --lr 1e-4
+python trainval_net_ds.py --cuda --net res18 --r True --dataset pascal_voc_jackson2 --lr 1e-4
 
 ```
 
