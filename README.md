@@ -66,9 +66,9 @@ We release two survillance videos you can test on. (coral.mp4 is from noscope)
 Here, we train domain specific model on such domain.
 
 ```
-Download.. 
+Download..  https://drive.google.com/file/d/1TnNcOpLqJzBwqYfRs7Oh8WRHOlk6I5ET/view?usp=sharing
 
-extract in the repo dir.
+plz extract in the repo dir.
 tar -zxvf images.tar.gz
 
 ```
