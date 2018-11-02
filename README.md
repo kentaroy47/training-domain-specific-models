@@ -90,6 +90,13 @@ We prepared a dataset.tar in the link bellow, if you want to take a short cut.
 Download (TBD) and place it in data dir.
 
 # Training Domain Specific Models!
+Run..
+
+```
+
+python trainval_net_ds.py --cuda --net res18 --epoch 30 --checksession 500 --checkepoch 40 --checkpoint 625 --r True --dataset pascal_voc_jackson2 --lr 1e-4
+
+```
 
 # Evaluation!
 
