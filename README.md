@@ -23,7 +23,7 @@ We see that by training, small models can achieve very high accuracy!
 # Preparation
 
 ## Requirements.
-Pytorch 0.4
+Pytorch 0.4.0
 
 Python 3.x
 
@@ -34,6 +34,7 @@ Lets start off by cloning this repo.
 
 ```
 git clone https://github.com/kentaroy47/training-domain-specific-models.git
+cd training-domain-specific-models
 ```
 
 ## Download models
@@ -77,7 +78,10 @@ This is done in a single script.
 Just run:
 
 ```
-python make_dataset.py
+# for dataset coral
+python make_dataset.py　--dataset coral
+# for dataset jackson2
+python make_dataset.py　--dataset jackson2
 ```
 
 ### shortcut..
