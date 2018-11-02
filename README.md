@@ -2,12 +2,13 @@
 This is a framework to train domain specific object detection models.
 
 Faster-RCNN implementation is based on faster-rcnn.pytorch by jwyang. Thanks!
+
 I strongly recommend to take a look at their readme if you get stuck on frcnn codes.
 
 https://github.com/jwyang/faster-rcnn.pytorch
 
 # What is a domain specific model?
-Resnet101 is a very good model but TOO BIG!
+For a backbone of object detection, Resnet101 is a very good model but TOO BIG!
 
 A domain specific model(DSM) is a model focusing on achieving high accuracy
 at a limited domain (e.g. fixed view of an intersection). We argue that DSMs
