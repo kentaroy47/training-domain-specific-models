@@ -88,17 +88,24 @@ python make_dataset.py　--dataset jackson2
 ### shortcut..
 We prepared a dataset.tar in the link bellow, if you want to take a short cut.
 
-Download (TBD) and place it in data dir.
+Actually cloning the repo will get you the pickle lable files (output/baseline/)
 
 # Training Domain Specific Models!
 Run..
 
+This will take about 2 hours on TitanXp.
+
 ```
 
-python trainval_net_ds.py --cuda --net res18 --r True --dataset pascal_voc_jackson2 --lr 1e-4
+python trainval_net_ds.py --cuda --r True --dataset pascal_voc_jackson2
 
 ```
 
 # Evaluation!
+We evaluate the accuracy (mAP) with validation images.
 
+The res101 outputs are utilized as ground truth here, since labeling them are cubersome.
 
+```
+python demo-and-eval-save.py --dataset pascal_voc_jackson2 --image_dir images/jackson2_val
+```
