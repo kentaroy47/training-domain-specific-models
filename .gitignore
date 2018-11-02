@@ -14,6 +14,7 @@ images/
 *.xml
 *.jpg
 *.txt
+*tar*
 
 .Python
 build/
