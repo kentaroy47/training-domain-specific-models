@@ -93,7 +93,7 @@ for file in files:
 
 
 # make template
-with open('/home/ken/datasets/VOC2007/VOCdevkit/VOC2007/Annotations/000001.xml') as fd:
+with open('images/000001.xml') as fd:
     doc = xmltodict.parse(fd.read())
 del doc['annotation']['size']
 del doc['annotation']['filename']
@@ -103,7 +103,7 @@ template_all = copy.deepcopy(doc)
 
 results2 = pickle.load(open(resultsdir, "rb"))
 results=[]
-if len(results2)==81:
+if len(results2)>21:
     for n in pascal_classes:
         for i,cls in enumerate(coco_classes):
             if n == cls:
@@ -136,7 +136,7 @@ nbox = []
 counter = np.zeros(len(classes))
 #trainclass = classes[2],classes[7],classes[14],classes[15]
 trainclass = classes
-
+train_num=len(results[0])
 
 for i,file in enumerate(trainvals[:train_num]):
     
@@ -198,13 +198,13 @@ for i,file in enumerate(trainvals[:train_num]):
         if not OBJECT_ONLY:
             outlists.append(file)
             write = targetdir + file + '.xml'
-            with open(write, "w") as f:
-                f.write(xmltodict.unparse(doc, pretty=True))
+#            with open(write, "w") as f:
+#                f.write(xmltodict.unparse(doc, pretty=True))
                 
     else:
         outlists.append(file)
         write = targetdir + file + '.xml'
-        print("writing")
+#        print("writing")
         with open(write, "w") as f:
             f.write(xmltodict.unparse(doc, pretty=True))
     #print(xmltodict.unparse(doc, pretty=True))

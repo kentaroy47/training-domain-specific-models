@@ -9,6 +9,11 @@ __pycache__/
 # Distribution / packaging
 data/
 models/
+images/
+*.pth
+*.xml
+*.jpg
+*.txt
 
 .Python
 build/

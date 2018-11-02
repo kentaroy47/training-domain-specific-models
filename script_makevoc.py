@@ -17,38 +17,40 @@ args = parser.parse_args()
 target=args.dataset
 
 # make dir in datasets
-command="cp -rf /home/ken/datasets/VOC2007/jackson/ /home/ken/datasets/VOC2007/"+target
+datasetname = "VOCdevkit"+target
+command="mkdir data/"+datasetname
+subprocess.call(command, shell=True)
+command="mkdir data/"+datasetname+"/VOC2007/"
+subprocess.call(command, shell=True)
+command="mkdir data/"+datasetname+"/VOC2007/JPEGImages"
+subprocess.call(command, shell=True)
+command="mkdir data/"+datasetname+"/VOC2007/Annotations"
+subprocess.call(command, shell=True)
+command="mkdir data/"+datasetname+"/VOC2007/ImageSets"
+subprocess.call(command, shell=True)
+command="mkdir data/"+datasetname+"/VOC2007/ImageSets/Main"
 subprocess.call(command, shell=True)
 
-# make xml
+# generate xml
 command="python xml_makelabels_domain.py --dataset "+target
 subprocess.call(command, shell=True)
 
-# make symb link
-command="rm /home/ken/datasets/VOC2007/"+target+"/VOC2007/Annotations"
+# make link
+command="cp output/"+target+"-train-labels-res101/"+target+"_train* data/"+datasetname+"/VOC2007/Annotations"
 subprocess.call(command, shell=True)
-command="rm /home/ken/datasets/VOC2007/"+target+"/VOC2007/JPEGImages"
-subprocess.call(command, shell=True)
-
-command="ln -s /home/ken/distil/output/"+target+"-train-labels-res101/ /home/ken/datasets/VOC2007/"+target+"/VOC2007/Annotations"
-subprocess.call(command, shell=True)
-command="ln -s /data2/lost+found/img/"+target+"_train/ /home/ken/datasets/VOC2007/"+target+"/VOC2007/JPEGImages"
+command="cp images/"+target+"_train/* data/"+datasetname+"/VOC2007/JPEGImages/"
 subprocess.call(command, shell=True)
 
 # copy text file to Main
-command="cp /home/ken/distil/trainval_"+target+".txt /home/ken/datasets/VOC2007/"+target+"/VOC2007/ImageSets/Main/"
-subprocess.call(command, shell=True)
-
-# make final link
-command="ln -s /home/ken/datasets/VOC2007/"+target+" data/VOCdevkit"+target
+command="cp trainval_"+target+".txt data/"+datasetname+"/VOC2007/ImageSets/Main/"
 subprocess.call(command, shell=True)
 
 # make models and copy
 command="mkdir models/res18/pascal_voc_"+target
 subprocess.call(command, shell=True)
-command="cp models/res18/faster_rcnn_500_40_625.pth models/res18/pascal_voc_"+target
+command="cp models/faster_rcnn_500_40_625.pth models/res18/pascal_voc_"+target
 subprocess.call(command, shell=True)
-command="mkdir models/squeeze/pascal_voc_"+target
-subprocess.call(command, shell=True)
-command="cp models/squeeze/faster_rcnn_500_40_625.pth models/squeeze/pascal_voc_"+target
-subprocess.call(command, shell=True)
+#command="mkdir models/squeeze/pascal_voc_"+target
+#subprocess.call(command, shell=True)
+#command="cp models/squeeze/faster_rcnn_500_40_625.pth models/squeeze/pascal_voc_"+target
+#subprocess.call(command, shell=True)

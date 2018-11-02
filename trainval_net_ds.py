@@ -57,13 +57,13 @@ def parse_args():
                       default='pascal_voc', type=str)
   parser.add_argument('--net', dest='net',
                     help='vgg16, res101',
-                    default='res101', type=str)
+                    default='res18', type=str)
   parser.add_argument('--start_epoch', dest='start_epoch',
                       help='starting epoch',
                       default=1, type=int)
   parser.add_argument('--epochs', dest='max_epochs',
                       help='number of epochs to train',
-                      default=20, type=int)
+                      default=30, type=int)
   parser.add_argument('--disp_interval', dest='disp_interval',
                       help='number of iterations to display',
                       default=100, type=int)
@@ -121,13 +121,13 @@ def parse_args():
                       default=False, type=bool)
   parser.add_argument('--checksession', dest='checksession',
                       help='checksession to load model',
-                      default=1, type=int)
+                      default=500, type=int)
   parser.add_argument('--checkepoch', dest='checkepoch',
                       help='checkepoch to load model',
-                      default=1, type=int)
+                      default=40, type=int)
   parser.add_argument('--checkpoint', dest='checkpoint',
                       help='checkpoint to load model',
-                      default=0, type=int)
+                      default=625, type=int)
 # log and diaplay
   parser.add_argument('--use_tfb', dest='use_tfboard',
                       help='whether use tensorboard',
