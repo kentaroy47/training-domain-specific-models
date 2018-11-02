@@ -52,34 +52,32 @@ We need to prepare Resnet101 and Resnet18 Faster-RCNN model.
 cd training-domain-specific-models
 mkdir models/
 cd models
-# resnet101 COCO trained model
-wget https://www.dropbox.com/s/dpq6qv0efspelr3/faster_rcnn_1_10_9771.pth?dl=0
+
+# resnet101 COCO trained model. This is from faster-rcnn.pytorch repo.
+Download.. https://www.dropbox.com/s/dpq6qv0efspelr3/faster_rcnn_1_10_9771.pth?dl=0
+
 # resnet18 COCO trained model
-wget TBD
+Download.. https://drive.google.com/file/d/1KvrBMDYD5QtccjWbeKsLDZj6gBYRwVum/view?usp=sharing
 cd ..
 ```
 
 ## Download dataset
 We release two survillance videos you can test on. (coral.mp4 is from noscope)
-A domain specific model is trained on such domain.
+Here, we train domain specific model on such domain.
 
 ```
-mkdir images
-# download coral video
-wget https://storage.googleapis.com/noscope-data/videos/coral-reef-long.mp4
-mv coral-reef-long.mp4 coral.mp4
+Download.. 
 
-# download jackson video
-wget TBD
+extract in the repo dir.
+tar -zxvf images.tar.gz
 
 ```
 
 ## Setup dataset
 If the models and the video are set, we can prepare the dataset.
 
-1. The video is converted to JPEG.
-2. Res101 model generates the teacher labels.
-3. The dataset is prepared in a PASCAL_VOC format for training.
+1. Res101 model generates the teacher labels.
+2. The dataset is prepared in a PASCAL_VOC format for training.
 
 This is done in a single script.
 
@@ -106,6 +104,9 @@ This will take about 2 hours on TitanXp.
 
 python trainval_net_ds.py --cuda --r True --dataset pascal_voc_jackson2
 
+# or for coral,
+python trainval_net_ds.py --cuda --r True --dataset pascal_voc_coral
+
 ```
 
 # Evaluation!
@@ -114,5 +115,5 @@ We evaluate the accuracy (mAP) with validation images.
 The res101 outputs are utilized as ground truth here, since labeling them are cubersome.
 
 ```
-python demo-and-eval-save.py --dataset pascal_voc_jackson2 --image_dir images/jackson2_val
+python demo-and-eval-save.py --cuda --dataset pascal_voc_jackson2 --image_dir images/jackson2_val
 ```
