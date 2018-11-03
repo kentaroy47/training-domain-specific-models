@@ -22,6 +22,7 @@ We see that by training, small models can achieve very high accuracy!
 Take a look at a Youtube Video Demo! By domain specific training, the mAP improves ~20%.
 https://youtu.be/h2raGGDunw4
 
+![youtube](https://github.com/kentaroy47/training-domain-specific-models/blob/master/youtube.JPG)
 
 
 ![dsm](https://github.com/kentaroy47/training-domain-specific-models/blob/master/fig1_v2.jpg)
