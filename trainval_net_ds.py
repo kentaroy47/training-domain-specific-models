@@ -174,109 +174,6 @@ if __name__ == '__main__':
       print(args.imdb_name)
       args.imdbval_name = "voc_2007_test"
       args.set_cfgs = ['ANCHOR_SCALES', '[4, 8, 16, 32]', 'ANCHOR_RATIOS', '[0.5,1,2]', 'MAX_NUM_GT_BOXES', '20']
-  elif args.dataset == "pascal_voc_shanghai":
-      args.imdb_name = "voc_2007_trainval_shanghai"
-      args.imdbval_name = "voc_2007_val_shanghai"
-      args.set_cfgs = ['ANCHOR_SCALES', '[8, 16, 32]', 'ANCHOR_RATIOS', '[0.5,1,2]', 'MAX_NUM_GT_BOXES', '20']
-    
-  elif args.dataset == "pascal_voc_res101":
-      args.imdb_name = "voc_2007_trainval_res101"
-      args.imdbval_name = "voc_2007_test_res101"
-      args.set_cfgs = ['ANCHOR_SCALES', '[8, 16, 32]', 'ANCHOR_RATIOS', '[0.5,1,2]', 'MAX_NUM_GT_BOXES', '30']
-  elif args.dataset == "pascal_voc_taipei":
-      args.imdb_name = "voc_2007_trainval_taipei"
-      args.imdbval_name = "voc_2007_test_res101"
-      args.set_cfgs = ['ANCHOR_SCALES', '[4, 8, 16, 32]', 'ANCHOR_RATIOS', '[0.5,1,2]', 'MAX_NUM_GT_BOXES', '30']
-  elif args.dataset == "pascal_voc_coral":
-      args.imdb_name = "voc_2007_trainval_coral"
-      args.imdbval_name = "voc_2007_test_coral"
-      args.set_cfgs = ['ANCHOR_SCALES', '[8, 16, 32]', 'ANCHOR_RATIOS', '[0.5,1,2]', 'MAX_NUM_GT_BOXES', '20']
-  elif args.dataset == "pascal_voc_coralcoco":
-      args.imdb_name = "voc_2007_trainval_coralcoco"
-      args.imdbval_name = "voc_2007_test_coral"
-      args.set_cfgs = ['ANCHOR_SCALES', '[8, 16, 32]', 'ANCHOR_RATIOS', '[0.5,1,2]', 'MAX_NUM_GT_BOXES', '20']
-  elif args.dataset == "pascal_voc_coralcocodif":
-      args.imdb_name = "voc_2007_trainval_coralcocodif"
-      args.imdbval_name = "voc_2007_test_coral"
-      args.set_cfgs = ['ANCHOR_SCALES', '[8, 16, 32]', 'ANCHOR_RATIOS', '[0.5,1,2]', 'MAX_NUM_GT_BOXES', '20']
-  elif args.dataset == "pascal_voc_jackson":
-      args.imdb_name = "voc_2007_trainval_jackson"
-      args.imdbval_name = "voc_2007_val_jackson"
-      args.set_cfgs = ['ANCHOR_SCALES', '[8, 16, 32]', 'ANCHOR_RATIOS', '[0.5,1,2]', 'MAX_NUM_GT_BOXES', '20']
-  elif args.dataset == "pascal_voc_jackson100":
-      args.imdb_name = "voc_2007_trainval_jackson100"
-      args.imdbval_name = "voc_2007_test_coral"
-      args.set_cfgs = ['ANCHOR_SCALES', '[8, 16, 32]', 'ANCHOR_RATIOS', '[0.5,1,2]', 'MAX_NUM_GT_BOXES', '20']
-  elif args.dataset == "pascal_voc_jackson10":
-      args.imdb_name = "voc_2007_trainval_jackson10"
-      args.imdbval_name = "voc_2007_test_coral"
-      args.set_cfgs = ['ANCHOR_SCALES', '[8, 16, 32]', 'ANCHOR_RATIOS', '[0.5,1,2]', 'MAX_NUM_GT_BOXES', '20']
-  elif args.dataset == "pascal_voc_coralcoco10":
-      args.imdb_name = "voc_2007_trainval_coralcoco10"
-      args.imdbval_name = "voc_2007_test_coral"
-      args.set_cfgs = ['ANCHOR_SCALES', '[8, 16, 32]', 'ANCHOR_RATIOS', '[0.5,1,2]', 'MAX_NUM_GT_BOXES', '20']
-  elif args.dataset == "pascal_voc_coralcoco20":
-      args.imdb_name = "voc_2007_trainval_coralcoco20"
-      args.imdbval_name = "voc_2007_test_coral"
-      args.set_cfgs = ['ANCHOR_SCALES', '[8, 16, 32]', 'ANCHOR_RATIOS', '[0.5,1,2]', 'MAX_NUM_GT_BOXES', '20']
-  elif args.dataset == "pascal_voc_jacksonallobject":
-      args.imdb_name = "voc_2007_trainval_jacksonallobject"
-      args.imdbval_name = "voc_2007_val_jackson"
-      args.set_cfgs = ['ANCHOR_SCALES', '[8, 16, 32]', 'ANCHOR_RATIOS', '[0.5,1,2]', 'MAX_NUM_GT_BOXES', '20']
-  elif args.dataset == "pascal_voc_coralcoco30":
-      args.imdb_name = "voc_2007_trainval_coralcoco30"
-      args.imdbval_name = "voc_2007_test_coral"
-      args.set_cfgs = ['ANCHOR_SCALES', '[8, 16, 32]', 'ANCHOR_RATIOS', '[0.5,1,2]', 'MAX_NUM_GT_BOXES', '20']
-  elif args.dataset == "pascal_voc_coralcoco50":
-      args.imdb_name = "voc_2007_trainval_coralcoco50"
-      args.imdbval_name = "voc_2007_test_coral"
-      args.set_cfgs = ['ANCHOR_SCALES', '[8, 16, 32]', 'ANCHOR_RATIOS', '[0.5,1,2]', 'MAX_NUM_GT_BOXES', '20']
-  elif args.dataset == "pascal_voc_coralcoco100":
-      args.imdb_name = "voc_2007_trainval_coralcoco100"
-      args.imdbval_name = "voc_2007_test_coral"
-      args.set_cfgs = ['ANCHOR_SCALES', '[8, 16, 32]', 'ANCHOR_RATIOS', '[0.5,1,2]', 'MAX_NUM_GT_BOXES', '20']
-  elif args.dataset == "pascal_voc_coralcoco250":
-      args.imdb_name = "voc_2007_trainval_coralcoco250"
-      args.imdbval_name = "voc_2007_test_coral"
-      args.set_cfgs = ['ANCHOR_SCALES', '[8, 16, 32]', 'ANCHOR_RATIOS', '[0.5,1,2]', 'MAX_NUM_GT_BOXES', '20']
-  elif args.dataset == "pascal_voc_coralcoco500":
-      args.imdb_name = "voc_2007_trainval_coralcoco500"
-      args.imdbval_name = "voc_2007_test_coral"
-      args.set_cfgs = ['ANCHOR_SCALES', '[8, 16, 32]', 'ANCHOR_RATIOS', '[0.5,1,2]', 'MAX_NUM_GT_BOXES', '20']
-  elif args.dataset == "pascal_voc_coralcoco1000":
-      args.imdb_name = "voc_2007_trainval_coralcoco1000"
-      args.imdbval_name = "voc_2007_test_coral"
-      args.set_cfgs = ['ANCHOR_SCALES', '[8, 16, 32]', 'ANCHOR_RATIOS', '[0.5,1,2]', 'MAX_NUM_GT_BOXES', '20']
-  elif args.dataset == "pascal_voc_coralcoco4000":
-      args.imdb_name = "voc_2007_trainval_coralcoco4000"
-      args.imdbval_name = "voc_2007_test_coral"
-      args.set_cfgs = ['ANCHOR_SCALES', '[8, 16, 32]', 'ANCHOR_RATIOS', '[0.5,1,2]', 'MAX_NUM_GT_BOXES', '20']
-  elif args.dataset == "pascal_voc_coralcoco8000":
-      args.imdb_name = "voc_2007_trainval_coralcoco8000"
-      args.imdbval_name = "voc_2007_test_coral"
-      args.set_cfgs = ['ANCHOR_SCALES', '[8, 16, 32]', 'ANCHOR_RATIOS', '[0.5,1,2]', 'MAX_NUM_GT_BOXES', '20']
-  elif args.dataset == "pascal_voc_coralpascal":
-      args.imdb_name = "voc_2007_trainval_coralpascal"
-      args.imdbval_name = "voc_2007_test_coralpascal"
-      args.set_cfgs = ['ANCHOR_SCALES', '[8, 16, 32]', 'ANCHOR_RATIOS', '[0.5,1,2]', 'MAX_NUM_GT_BOXES', '20']
-  elif args.dataset == "pascal_voc_0712":
-      args.imdb_name = "voc_2007_trainval+voc_2012_trainval"
-      args.imdbval_name = "voc_2007_test"
-      args.set_cfgs = ['ANCHOR_SCALES', '[8, 16, 32]', 'ANCHOR_RATIOS', '[0.5,1,2]', 'MAX_NUM_GT_BOXES', '20']
-  elif args.dataset == "coco":
-      args.imdb_name = "coco_2014_train+coco_2014_valminusminival"
-      args.imdbval_name = "coco_2014_minival"
-      args.set_cfgs = ['ANCHOR_SCALES', '[4, 8, 16, 32]', 'ANCHOR_RATIOS', '[0.5,1,2]', 'MAX_NUM_GT_BOXES', '50']
-  elif args.dataset == "imagenet":
-      args.imdb_name = "imagenet_train"
-      args.imdbval_name = "imagenet_val"
-      args.set_cfgs = ['ANCHOR_SCALES', '[4, 8, 16, 32]', 'ANCHOR_RATIOS', '[0.5,1,2]', 'MAX_NUM_GT_BOXES', '30']
-  elif args.dataset == "vg":
-      # train sizes: train, smalltrain, minitrain
-      # train scale: ['150-50-20', '150-50-50', '500-150-80', '750-250-150', '1750-700-450', '1600-400-20']
-      args.imdb_name = "vg_150-50-50_minitrain"
-      args.imdbval_name = "vg_150-50-50_minival"
-      args.set_cfgs = ['ANCHOR_SCALES', '[4, 8, 16, 32]', 'ANCHOR_RATIOS', '[0.5,1,2]', 'MAX_NUM_GT_BOXES', '50']
 
   args.cfg_file = "cfgs/{}_ls.yml".format(args.net) if args.large_scale else "cfgs/{}.yml".format(args.net)
 
@@ -363,8 +260,6 @@ if __name__ == '__main__':
     fasterRCNN = resnet(imdb.classes, 152, pretrained=True, class_agnostic=args.class_agnostic)
   elif args.net == 'squeeze':
     fasterRCNN = squeeze(imdb.classes, pretrained=True, class_agnostic=args.class_agnostic)
-  elif args.net == 'squeezemod':
-    fasterRCNN = squeezemod(imdb.classes, pretrained=True, class_agnostic=args.class_agnostic)
   elif args.net == 'alex':
     fasterRCNN = alex(imdb.classes, pretrained=True, class_agnostic=args.class_agnostic)
   else:
@@ -375,8 +270,6 @@ if __name__ == '__main__':
 
   lr = cfg.TRAIN.LEARNING_RATE
   lr = args.lr
-  #tr_momentum = cfg.TRAIN.MOMENTUM
-  #tr_momentum = args.momentum
 
   params = []
   for key, value in dict(fasterRCNN.named_parameters()).items():
@@ -454,28 +347,9 @@ if __name__ == '__main__':
             optimizer.load_state_dict(checkpoint['optimizer'])
             
     
-    # freeze parameters
-    # resnet, 
-    #layer=0:rpn
-    #layer=5:resnet
-    #layer=6:FRCNN-top layer
-    #layer=7:class regression
-    #layer=8:bbox regression
-#    for nlayer, child in enumerate(fasterRCNN.children()):
-#        print(child)
-#        if nlayer == 5: #or nlayer == 7 or nlayer == 8: #or nlayer == 6: #RPN and resnet
-#            for i,param in enumerate(child.parameters()):                   
-#                if nlayer ==6 and i > 8:
-#                    continue
-#                print("disabling training for layer", nlayer)   
-#                param.requires_grad = False
     print(fasterRCNN)                              
         
-#        lr = optimizer.param_groups[0]['lr']
-    weight_decay = optimizer.param_groups[0]['weight_decay']
-#    if 'pooling_mode' in checkpoint.keys():
-#      cfg.POOLING_MODE = checkpoint['pooling_mode']
-        
+    weight_decay = optimizer.param_groups[0]['weight_decay']       
     double_bias = True
     bias_decay = True
         
