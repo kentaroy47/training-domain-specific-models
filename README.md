@@ -10,9 +10,13 @@ https://github.com/jwyang/faster-rcnn.pytorch
 
 # What is a domain specific model?
 For a backbone of object detection, Resnet101 is a very good model but TOO BIG!
+But a small model like Resnet18 has a low accuracy, due to small network capacity.
+
+However, do we need such a big model to do object detection in a limited domain? (Like your office or a particular intersection)
+Since backgrounds does not change, even small model should do very well if trained properly!
 
 A domain specific model(DSM) is a model focusing on achieving high accuracy
-at a limited domain (e.g. fixed view of an intersection). We argue that DSMs
+at such limited domain (e.g. fixed view of an intersection). We argue that DSMs
 can capture essential features well even with a small model size.
 
 In this repo, we train a small domain specific model (say res18) in with a dataset of a limited domain.
