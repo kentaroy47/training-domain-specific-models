@@ -1,10 +1,11 @@
 # training-domain-specific-models
+[Training domain specific models for efficient object detection arXivpaper](https://arxiv.org/abs/1811.02689)
+
 This is a framework to train domain specific object detection models.
 
 Faster-RCNN implementation is based on faster-rcnn.pytorch by jwyang. Thanks!
 
 I strongly recommend to take a look at their readme if you get stuck on frcnn codes.
-
 
 https://github.com/jwyang/faster-rcnn.pytorch
 
@@ -72,7 +73,7 @@ cd ..
 ```
 
 ## Download dataset
-We release two survillance videos you can test on. (coral.mp4 is from noscope)
+We release two survillance videos (converted to train/val images in pascal format) you can test on. 
 Here, we train domain specific model on such domain.
 
 ```
@@ -125,5 +126,5 @@ We evaluate the accuracy (mAP) with validation images.
 The res101 outputs are utilized as ground truth here, since labeling them are cubersome.
 
 ```
-python demo-and-eval-save.py --cuda --dataset pascal_voc_jackson2 --image_dir images/jackson2_val
+python demo-and-eval-save.py --cuda --dataset pascal_voc_jackson2 --image_dir images/jackson2_val --
 ```
