@@ -24,8 +24,10 @@ In this repo, we train a small domain specific model (say res18) in with a datas
 
 We see that by training, small models can achieve very high accuracy!
 
-Take a look at a Youtube Video Demo! By domain specific training, the mAP improves ~20%.
-https://youtu.be/h2raGGDunw4
+Take a look at a [Youtube Video Demo!](https://youtu.be/h2raGGDunw4) 
+
+By domain specific training, the mAP improves ~20%.
+
 
 ![youtube](https://github.com/kentaroy47/training-domain-specific-models/blob/master/youtube.JPG)
 
