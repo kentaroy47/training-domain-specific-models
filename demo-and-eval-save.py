@@ -57,11 +57,6 @@ def flatten(libs):
     return flatlist, confidence, idx
 
 def voc_ap(rec, prec, use_07_metric=False):
-  """ ap = voc_ap(rec, prec, [use_07_metric])
-  Compute VOC AP given precision and recall.
-  If use_07_metric is true, uses the
-  VOC 07 11 point method (default:False).
-  """
   if use_07_metric:
     # 11 point metric
     ap = 0.
@@ -185,14 +180,6 @@ momentum = cfg.TRAIN.MOMENTUM
 weight_decay = cfg.TRAIN.WEIGHT_DECAY
 
 def _get_image_blob(im):
-  """Converts an image into a network input.
-  Arguments:
-    im (ndarray): a color image in BGR order
-  Returns:
-    blob (ndarray): a data blob holding an image pyramid
-    im_scale_factors (list): list of image scales (relative to im) used
-      in the image pyramid
-  """
   im_orig = im[:,:,:].astype(np.float32, copy=True)
 #  im_orig -= cfg.PIXEL_MEANS
 # changed to use pytorch models
@@ -260,9 +247,6 @@ if __name__ == '__main__':
                            'motorbike', 'person', 'pottedplant',
                            'sheep', 'sofa', 'train', 'truck'])
 
-#  cfg.ANCHOR_SCALES = [4, 8, 16, 32]
-#  cfg.ANCHOR_RATIOS = [0.5,1,2]
-#  args.set_cfgs = ['ANCHOR_SCALES', '[4, 8, 16, 32]', 'ANCHOR_RATIOS', '[0.5,1,2]', 'MAX_NUM_GT_BOXES', '50'] 
   print("coco", args.coco)
   cfg.ANCHOR_SCALES = [4, 8, 16, 32]
   cfg.ANCHOR_RATIOS = [0.5,1,2]
@@ -702,15 +686,6 @@ if __name__ == '__main__':
                       tp[d] = 1.
                   else:
                       fp[d] = 1.
-#                  if ovmax > ovthresh:
-#                        if not det[jmax]:
-#                            tp[d] = 1.
-#                            det[jmax] = 1
-#                        else:
-#                            fp[d] = 1.
-#                  else:
-#                        fp[d] = 1.
-
         
           # compute precision recall
           fp = np.cumsum(fp)
@@ -800,7 +775,6 @@ if __name__ == '__main__':
       with open(outfile, 'wb') as f:
           pickle.dump(base_featlist, f, pickle.HIGHEST_PROTOCOL)
       
-#  truth_boxes = pickle.load( open("output/res50/voc_2007_test/faster_rcnn_10/detections.pkl", "rb" ) )
   ovthresh = 0.5
   
   TRUTH_THRESHOLD=0.75
@@ -901,15 +875,6 @@ if __name__ == '__main__':
                       tp[d] = 1.
                   else:
                       fp[d] = 1.
-#                  if ovmax > ovthresh:
-#                        if not det[jmax]:
-#                            tp[d] = 1.
-#                            det[jmax] = 1
-#                        else:
-#                            fp[d] = 1.
-#                  else:
-#                        fp[d] = 1.
-
         
           # compute precision recall
           fp = np.cumsum(fp)
@@ -929,9 +894,6 @@ if __name__ == '__main__':
   end = time.time()
   print("test time: %0.4fs" % (end - start))
 
-
-# write output
-# define dataset
   if "jackson" in args.image_dir:
       target = "jackson"
   elif "coral" in args.image_dir:
@@ -964,8 +926,3 @@ with open("results/results-"+str(args.dataset)+str(args.checksession)+".txt", "a
     f.write("Train AP:" + str(aps[19]) + "\n")
     f.write("Truck AP:" + str(aps[20]) + "\n")
     f.write("Bear AP:" + str(aps[3]) + "\n")
-    
-    
-    useful = aps[15],aps[7],aps[2],aps[14],aps[19],aps[6]
-    f.write(str(useful) + "\n")
-    f.write("mAP:" + str(np.mean(useful)) + "\n")
