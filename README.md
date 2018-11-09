@@ -128,5 +128,5 @@ We evaluate the accuracy (mAP) with validation images.
 The res101 outputs are utilized as ground truth here, since labeling them are cubersome.
 
 ```
-python demo-and-eval-save.py --cuda --dataset pascal_voc_jackson2 --image_dir images/jackson2_val --
+python demo-and-eval-save.py --net res18 --dataset pascal_voc_jackson2 --cuda --checksession 1 --checkepoch 20 --checkpoint 1 --image_dir images/jackson2_val/ --truth output/baseline/jackson2val-res101.pkl
 ```
