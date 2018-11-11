@@ -134,11 +134,10 @@ box = []
 boxsize = []
 nbox = []
 counter = np.zeros(len(classes))
-#trainclass = classes[2],classes[7],classes[14],classes[15]
 trainclass = classes
 train_num=len(results[0])
 
-for i,file in enumerate(trainvals[1:train_num]):
+for i,file in enumerate(trainvals[:train_num]):
     
     del doc['annotation']['object'] 
     doc['annotation']['object'] = copy.deepcopy(template)
@@ -164,7 +163,6 @@ for i,file in enumerate(trainvals[1:train_num]):
                 a['bndbox']['ymax'] = int(np.floor(out[3]))
                 a['name'] = cls
                 
-#                print("file",file,a)
                 # filter small bbox
                 if min(out[2]-out[0],out[3]-out[1]) > 20:                    
                     if min(out[2]-out[0],out[3]-out[1]) < 40:
@@ -174,41 +172,23 @@ for i,file in enumerate(trainvals[1:train_num]):
                     counter[ncls] +=1
                     bboxes.append(out[0:4])
                 
-                # monitor bbox
-                
+                # monitor bbox           
                 box.append(copy.deepcopy(a))
                 bsize = min(out[2]-out[0],out[3]-out[1])
                 boxsize.append(bsize)
-                
-        #check overlap of boxes        
-#        for numbox, bbox in enumerate(bboxes):
-#            iou=0
-#            for ntbox, testbbox in enumerate(bboxes):
-#                if numbox!=ntbox:
-#                    iout = bb_intersection_over_union(bbox, testbbox)
-#                    if iout>iou:
-#                        iou=iout
-#            if iou>0.5:
-#                print(iou)
-#                doc['annotation']['object'][numbox]['difficult']=1
-                        
+                                  
     nbox.append(flag)
     if flag == 0:
         print("no target was added!")
         if not OBJECT_ONLY:
             outlists.append(file)
-            write = targetdir + file + '.xml'
-#            with open(write, "w") as f:
-#                f.write(xmltodict.unparse(doc, pretty=True))
-                
+            write = targetdir + file + '.xml'               
     else:
         outlists.append(file)
         write = targetdir + file + '.xml'
 #        print("writing")
         with open(write, "w") as f:
             f.write(xmltodict.unparse(doc, pretty=True))
-    #print(xmltodict.unparse(doc, pretty=True))
-    
 
 with open(trainfile, "w") as f: 
     for trainval in outlists:
@@ -219,73 +199,3 @@ import subprocess
 command = "cp "+trainfile+" data/VOCdevkit"+target+"/VOC2007/ImageSets/Main/"
 subprocess.call(command, shell=True)
 
-#files = sorted(glob.glob(datasource2))
-#
-#trainvals = []
-#outlists = []
-#MAX_SAMPLE = 10000
-#for file in files:
-#     trainvals.append(os.path.basename(file)[:-4])
-
-
-## write val
-#outlists = []
-#
-#for i,file in enumerate(trainvals):
-#    
-#    del doc['annotation']['object'] 
-#    doc['annotation']['object'] = copy.deepcopy(template)
-#        
-#    try:
-#        while len(doc['annotation']['object'])>0:
-#            temp = doc['annotation']['object'].pop()
-#    except:
-#        None
-#        
-#    flag = 0
-#    
-#    
-#    for ncls, cls in enumerate(classes):
-#        result = results[ncls][i]
-#        for out in result:
-#            if out[4] > THRESH and cls in trainclass: # confident
-#                a = temp
-#                a['bndbox']['xmin'] = int(np.floor(out[0]))
-#                a['bndbox']['ymin'] = int(np.floor(out[1]))
-#                a['bndbox']['xmax'] = int(np.floor(out[2]))
-#                a['bndbox']['ymax'] = int(np.floor(out[3]))
-#                a['name'] = cls
-#                print("file",file,a)
-#                # filter small bbox
-#                if min(out[2]-out[0],out[3]-out[1]) > 10 and flag < 20 and counter[ncls] < MAX_SAMPLE:
-#                    doc['annotation']['object'].append(copy.deepcopy(a))
-#                    flag += 1
-#                    counter[ncls] +=1
-#                # monitor bbox
-#
-#                box.append(copy.deepcopy(a))
-#                bsize = min(out[2]-out[0],out[3]-out[1])
-#                boxsize.append(bsize)
-#                
-#                
-#    nbox.append(flag)
-#    if flag == 0:
-#        print("no target was added!")
-#        if not OBJECT_ONLY:
-#            outlists.append(file)
-#            write = targetdir + file + '.xml'
-#            with open(write, "w") as f:
-#                f.write(xmltodict.unparse(doc, pretty=True))
-#                
-#    else:
-#        outlists.append(file)
-#        write = targetdir + file + '.xml'
-#        with open(write, "w") as f:
-#            f.write(xmltodict.unparse(doc, pretty=True))
-#    #print(xmltodict.unparse(doc, pretty=True))
-#    
-#
-#with open(valfile, "w") as f: 
-#    for trainval in outlists:
-#        f.write(trainval + '\n') 
-#    
