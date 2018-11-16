@@ -130,3 +130,10 @@ The res101 outputs are utilized as ground truth here, since labeling them are cu
 ```
 python demo-and-eval-save.py --net res18 --dataset pascal_voc_jackson2 --cuda --checksession 1 --checkepoch 20 --checkpoint 1 --image_dir images/jackson2_val/ --truth output/baseline/jackson2val-res101.pkl
 ```
+
+## Ground truths
+We also plan to release the hand-labeled ground truth as well.
+
+Interestingly, domain specific model outperforms the accuracy that of res101.
+
+![gt](https://github.com/kentaroy47/training-domain-specific-models/blob/master/gt.JPG)
