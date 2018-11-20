@@ -134,7 +134,6 @@ box = []
 boxsize = []
 nbox = []
 counter = np.zeros(len(classes))
-#trainclass = classes[2],classes[7],classes[14],classes[15]
 trainclass = classes
 train_num=len(results[0])
 
@@ -164,7 +163,6 @@ for i,file in enumerate(trainvals[:train_num]):
                 a['bndbox']['ymax'] = int(np.floor(out[3]))
                 a['name'] = cls
                 
-#                print("file",file,a)
                 # filter small bbox
                 if min(out[2]-out[0],out[3]-out[1]) > 20:                    
                     if min(out[2]-out[0],out[3]-out[1]) < 40:
@@ -174,27 +172,24 @@ for i,file in enumerate(trainvals[:train_num]):
                     counter[ncls] +=1
                     bboxes.append(out[0:4])
                 
-                # monitor bbox
-                
+                # monitor bbox           
                 box.append(copy.deepcopy(a))
                 bsize = min(out[2]-out[0],out[3]-out[1])
                 boxsize.append(bsize)
-                                       
+
     nbox.append(flag)
     if flag == 0:
         print("no target was added!")
         if not OBJECT_ONLY:
             outlists.append(file)
             write = targetdir + file + '.xml'
-                
+               
     else:
         outlists.append(file)
         write = targetdir + file + '.xml'
 #        print("writing")
         with open(write, "w") as f:
             f.write(xmltodict.unparse(doc, pretty=True))
-    #print(xmltodict.unparse(doc, pretty=True))
-    
 
 with open(trainfile, "w") as f: 
     for trainval in outlists:
