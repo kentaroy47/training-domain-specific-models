@@ -176,13 +176,14 @@ for i,file in enumerate(trainvals[:train_num]):
                 box.append(copy.deepcopy(a))
                 bsize = min(out[2]-out[0],out[3]-out[1])
                 boxsize.append(bsize)
-                                  
+
     nbox.append(flag)
     if flag == 0:
         print("no target was added!")
         if not OBJECT_ONLY:
             outlists.append(file)
-            write = targetdir + file + '.xml'               
+            write = targetdir + file + '.xml'
+               
     else:
         outlists.append(file)
         write = targetdir + file + '.xml'
@@ -198,4 +199,3 @@ import subprocess
 
 command = "cp "+trainfile+" data/VOCdevkit"+target+"/VOC2007/ImageSets/Main/"
 subprocess.call(command, shell=True)
-
