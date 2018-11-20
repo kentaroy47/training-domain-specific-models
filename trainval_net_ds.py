@@ -33,7 +33,7 @@ from model.utils.net_utils import weights_normal_init, save_net, load_net, \
 from model.faster_rcnn.vgg16 import vgg16
 from model.faster_rcnn.resnet import resnet
 from model.faster_rcnn.squeezenet import squeeze
-from model.faster_rcnn.squeezenet_mod import squeeze as squeezemod
+#from model.faster_rcnn.squeezenet_mod import squeeze as squeezemod
 from model.faster_rcnn.alex import alex
 
 import torch._utils

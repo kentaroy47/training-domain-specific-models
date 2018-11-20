@@ -19,7 +19,7 @@ def parse_args():
   parser.add_argument('--nout', dest='nout',
                       help='directory to load models', default=100)
   parser.add_argument('--sess', dest='sess',
-                      help='directory to load models', default=730)
+                      help='directory to load models', default=740)
   parser.add_argument('--dataset', dest='dataset',
                       help='training dataset', type=str)
   parser.add_argument('--net', dest='net',
@@ -47,24 +47,12 @@ command = "cp trainval_"+target+".txt data/VOCdevkit"+target+"/VOC2007/ImageSets
 subprocess.call(command, shell=True)
 
 # do training
-if not args.notrain:
-    command = "python trainval_net_ds_savemod.py --cuda --dataset pascal_voc_"+target+" --net "+args.net+" --r True --s "+SESS+" --checkepoch 40 --checkpoint 625 --checksession 500 --epoch 30  --bs 1 --nw 8  --lr 1e-4"
-    subprocess.call(command, shell=True)
+command = "python trainval_net_ds.py --cuda --dataset pascal_voc_"+target+" --net "+args.net+" --r True --s "+SESS+" --checkepoch 40 --checkpoint 625 --checksession 500 --epoch 30  --bs 1 --nw 8  --lr 1e-4"
+subprocess.call(command, shell=True)
 
 # evaluate
-if target=="coral":
-    point=1798
-elif target=="taipei2":
-    point=6229
-elif target=="jackson2":
-    point=1797
-elif target=="castro3":
-    point=1800
-elif target=="kentucky":
-    point=1800
-else:
-    point=str(1)
-for ep in range(2, 13): 
+point=str(1)
+for ep in range(4, 13): 
     epoch = str(ep*5)
     command = "python demo-and-eval-save.py --net "+args.net+" --dataset pascal_voc_"+target+" --cuda --checksession "+SESS+" --checkepoch "+epoch+" --checkpoint "+point+" --image_dir /data2/lost+found/img/"+target+"_val/ --truth output/baseline/"+target+"val-res101.pkl"
     subprocess.call(command, shell=True)
