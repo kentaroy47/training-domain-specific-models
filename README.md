@@ -1,7 +1,7 @@
 # training-domain-specific-models
 [Training domain specific models for efficient object detection arXivpaper](https://arxiv.org/abs/1811.02689)
 
-This is a framework to train domain specific object detection models.
+This is a framework to train domain specific model, which is **accurate + computation efficient!**
 
 Faster-RCNN implementation is based on faster-rcnn.pytorch by jwyang. Thanks!
 
