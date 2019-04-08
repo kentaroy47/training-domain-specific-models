@@ -67,7 +67,7 @@ mkdir models/
 cd models
 
 # resnet101 COCO trained model. This is from faster-rcnn.pytorch repo.
-Download.. https://www.dropbox.com/s/dpq6qv0efspelr3/faster_rcnn_1_10_9771.pth?dl=0
+Download.. https://www.dropbox.com/s/dpq6qv0efspelr3/faster_rcnn_1_10_9771.pth
 
 # resnet18 COCO trained model
 Download.. https://drive.google.com/file/d/1KvrBMDYD5QtccjWbeKsLDZj6gBYRwVum/view?usp=sharing
