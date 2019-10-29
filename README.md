@@ -63,27 +63,10 @@ We need to prepare Resnet101 and Resnet18 Faster-RCNN model.
 
 ```
 cd training-domain-specific-models
-mkdir models/
-cd models
 
-# resnet101 COCO trained model. This is from faster-rcnn.pytorch repo.
-Download.. https://www.dropbox.com/s/dpq6qv0efspelr3/faster_rcnn_1_10_9771.pth
-
-# resnet18 COCO trained model
-Download.. https://drive.google.com/file/d/1KvrBMDYD5QtccjWbeKsLDZj6gBYRwVum/view?usp=sharing
-cd ..
-```
-
-## Download dataset
-We release two survillance videos (converted to train/val images in pascal format) you can test on. 
-Here, we train domain specific model on such domain.
-
-```
-Download..  https://drive.google.com/file/d/1TnNcOpLqJzBwqYfRs7Oh8WRHOlk6I5ET/view?usp=sharing
-
-plz extract in the repo dir.
-tar -zxvf images.tar.gz
-
+Download.. 
+wget https://www.dropbox.com/s/ew47jhdu67bdocf/files.tar.gz
+tar -zxvf files.tar.gz
 ```
 
 ## Setup dataset
